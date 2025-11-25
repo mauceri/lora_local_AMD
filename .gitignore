@@ -1,0 +1,22 @@
+.venv/
+llenv/
+__pycache__/
+*.pyc
+
+# Poids / checkpoints / artefacts volumineux
+checkpoints*/
+checkpoints_phi4_lora*/
+artifacts/
+gguf_out/
+grenier/
+*.safetensors
+
+# Modèles locaux (garder les scripts mais pas les poids)
+models/
+
+# Notebooks et sorties temporaires
+*.ipynb_checkpoints/
+*.tmp
+
+# Garder les jeux de données
+!data/
