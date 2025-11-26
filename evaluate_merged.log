@@ -1,0 +1,14 @@
+2025-11-26 18:46:02,933 [INFO] === Évaluation modèle fusionné ===
+2025-11-26 18:46:02,933 [INFO] model=gguf_out/phi4_merged/merged_hf data_file=data/test.jsonl device=auto bf16=False
+2025-11-26 18:46:05,628 [INFO] Dataset chargé : 1026 exemples
+2025-11-26 18:46:07,756 [INFO] dtype=torch.float16 device_map=auto
+2025-11-26 18:46:08,038 [INFO] We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+2025-11-26 18:46:20,659 [INFO] Début de l'évaluation…
+2025-11-26 20:46:49,376 [INFO] === Évaluation modèle fusionné ===
+2025-11-26 20:46:49,376 [INFO] model=gguf_out/phi4_merged/merged_hf data_file=data/test.jsonl device=auto bf16=False
+2025-11-26 20:46:50,503 [INFO] Dataset chargé : 1026 exemples
+2025-11-26 20:46:53,182 [INFO] dtype=torch.float16 device_map=auto
+2025-11-26 20:46:53,456 [INFO] We will use 90% of the memory on device 0 for storing the model, and 10% for the buffer to avoid OOM. You can set `max_memory` in to a higher value to use more memory (at your own risk).
+2025-11-26 20:47:02,919 [INFO] Début de l'évaluation…
+2025-11-26 21:09:41,707 [INFO] eval_loss=0.4851  perplexity=1.6243
+2025-11-26 21:09:41,707 [INFO] Fin. Détails : {'eval_loss': 0.4850679934024811, 'eval_model_preparation_time': 0.0023, 'eval_runtime': 1358.778, 'eval_samples_per_second': 0.755, 'eval_steps_per_second': 0.755}

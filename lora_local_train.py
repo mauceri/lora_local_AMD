@@ -104,6 +104,33 @@ class SimpleCausalCollator:
         batch["labels"] = _T.tensor(padded_labels, dtype=_T.long)
         return batch
 
+class LossLoggerCallback:
+    """Callback simple pour logguer la perte à chaque step voulu."""
+    def __init__(self, log_path: str, every: int = 1):
+        self.log_path = log_path
+        self.every = max(1, every)
+        # On ouvre le fichier en append pour conserver l'historique
+        os.makedirs(os.path.dirname(log_path) or ".", exist_ok=True)
+        self._fh = open(log_path, "a", encoding="utf-8")
+
+    def on_log(self, args, state, control, logs=None, **kwargs):
+        if logs is None:
+            return
+        # Un log est émis toutes les logging_steps par Trainer
+        if "loss" in logs:
+            line = f"step={state.global_step} loss={logs['loss']:.4f}"
+            if "learning_rate" in logs:
+                line += f" lr={logs['learning_rate']:.2e}"
+            print(line, flush=True)
+            self._fh.write(line + "\n")
+            self._fh.flush()
+
+    def on_train_end(self, args, state, control, **kwargs):
+        try:
+            self._fh.close()
+        except Exception:
+            pass
+
 # ------------------------- CLI -------------------------
 
 def parse_args():
@@ -144,6 +171,8 @@ def parse_args():
     p.add_argument("--save_steps", type=int, default=0)
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--resume_from", type=str, default=None)
+    p.add_argument("--log_every", type=int, default=1, help="Nombre de pas entre deux logs (perte).")
+    p.add_argument("--log_file", type=str, default="training.log", help="Fichier texte de log des pertes.")
     return p.parse_args()
 
 # ------------------------- Main -------------------------
@@ -235,7 +264,8 @@ def main():
         gradient_accumulation_steps=args.grad_accum,
         num_train_epochs=args.epochs,
         learning_rate=args.lr,
-        logging_steps=200,
+        logging_steps=args.log_every,
+        logging_strategy="steps",
         save_strategy=args.save_strategy,
         save_steps=args.save_steps if args.save_strategy == "steps" else None,
         report_to="none",
@@ -247,6 +277,7 @@ def main():
         eval_strategy="no",
         seed=args.seed,
     )
+    loss_logger = LossLoggerCallback(args.log_file, args.log_every)
     trainer = Trainer(
         model=model,
         args=targs,
@@ -254,6 +285,7 @@ def main():
         eval_dataset=None,
         data_collator=collator,
         tokenizer=tok,
+        callbacks=[loss_logger],
     )
     train_result = trainer.train(resume_from_checkpoint=args.resume_from)
     print(train_result)

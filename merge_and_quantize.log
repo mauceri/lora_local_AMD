@@ -1,0 +1,70 @@
+2025-11-26 17:24:30,488 [INFO] [merge] Chargement base=models/phi4 dtype=float16
+2025-11-26 17:24:42,162 [INFO] [merge] Chargement LoRA depuis checkpoints/phi4-lora-vtest
+2025-11-26 17:24:47,726 [INFO] [merge] Sauvegarde dans gguf_out/phi4_merged/merged_hf
+2025-11-26 17:29:47,337 [INFO] [merge] Chargement base=models/phi4 dtype=float16
+2025-11-26 17:30:59,407 [INFO] [merge] Chargement LoRA depuis checkpoints/phi4-lora-vtest
+2025-11-26 17:31:04,873 [INFO] [merge] Sauvegarde dans gguf_out/phi4_merged/merged_hf
+2025-11-26 17:32:25,102 [INFO] [merge] Terminé.
+2025-11-26 17:39:52,943 [INFO] [merge] Chargement base=models/phi4 dtype=float16
+2025-11-26 17:40:32,058 [INFO] [merge] Chargement LoRA depuis checkpoints/phi4-lora-vtest
+2025-11-26 17:40:37,772 [INFO] [merge] Sauvegarde dans gguf_out/phi4_merged/merged_hf
+2025-11-26 17:40:50,291 [INFO] [merge] Terminé.
+2025-11-26 17:42:51,434 [INFO] [merge] Chargement base=models/phi4 dtype=float16
+2025-11-26 17:42:54,145 [INFO] [merge] Chargement LoRA depuis checkpoints/phi4-lora-vtest
+2025-11-26 17:42:58,202 [INFO] [merge] Sauvegarde dans gguf_out/phi4_merged/merged_hf
+2025-11-26 17:43:09,721 [INFO] [merge] Terminé.
+2025-11-26 17:47:19,793 [INFO] [merge] Chargement base=models/phi4 dtype=float16
+2025-11-26 17:47:22,552 [INFO] [merge] Chargement LoRA depuis checkpoints/phi4-lora-vtest
+2025-11-26 17:47:26,604 [INFO] [merge] Sauvegarde dans gguf_out/phi4_merged/merged_hf
+2025-11-26 17:47:38,754 [INFO] [merge] Terminé.
+2025-11-26 17:49:55,630 [INFO] [merge] Chargement base=models/phi4 dtype=float16
+2025-11-26 17:49:58,407 [INFO] [merge] Chargement LoRA depuis checkpoints/phi4-lora-vtest
+2025-11-26 17:50:02,452 [INFO] [merge] Sauvegarde dans gguf_out/phi4_merged/merged_hf
+2025-11-26 17:50:13,970 [INFO] [merge] Terminé.
+2025-11-26 18:05:25,031 [INFO] [merge] Chargement base=models/phi4 dtype=float16
+2025-11-26 18:05:27,873 [INFO] [merge] Chargement LoRA depuis checkpoints/phi4-lora-vtest
+2025-11-26 18:05:32,047 [INFO] [merge] Sauvegarde dans gguf_out/phi4_merged/merged_hf
+2025-11-26 18:05:44,539 [INFO] [merge] Terminé.
+2025-11-26 18:08:52,626 [INFO] [merge] Chargement base=models/phi4 dtype=float16
+2025-11-26 18:08:55,433 [INFO] [merge] Chargement LoRA depuis checkpoints/phi4-lora-vtest
+2025-11-26 18:08:59,584 [INFO] [merge] Sauvegarde dans gguf_out/phi4_merged/merged_hf
+2025-11-26 18:09:11,767 [INFO] [merge] Terminé.
+2025-11-26 18:12:41,294 [INFO] [merge] Chargement base=models/phi4 dtype=float16
+2025-11-26 18:12:44,139 [INFO] [merge] Chargement LoRA depuis checkpoints/phi4-lora-vtest
+2025-11-26 18:12:48,316 [INFO] [merge] Sauvegarde dans gguf_out/phi4_merged/merged_hf
+2025-11-26 18:13:00,408 [INFO] [merge] Terminé.
+2025-11-26 18:13:33,477 [INFO] [merge] Chargement base=models/phi4 dtype=float16
+2025-11-26 18:13:36,282 [INFO] [merge] Chargement LoRA depuis checkpoints/phi4-lora-vtest
+2025-11-26 18:13:40,502 [INFO] [merge] Sauvegarde dans gguf_out/phi4_merged/merged_hf
+2025-11-26 18:13:52,661 [INFO] [merge] Terminé.
+2025-11-26 18:16:47,219 [INFO] [merge] Chargement base=models/phi4 dtype=float16
+2025-11-26 18:16:50,053 [INFO] [merge] Chargement LoRA depuis checkpoints/phi4-lora-vtest
+2025-11-26 18:16:54,243 [INFO] [merge] Sauvegarde dans gguf_out/phi4_merged/merged_hf
+2025-11-26 18:17:06,290 [INFO] [merge] Terminé.
+2025-11-26 18:17:48,296 [INFO] [merge] Chargement base=models/phi4 dtype=float16
+2025-11-26 18:17:51,096 [INFO] [merge] Chargement LoRA depuis checkpoints/phi4-lora-vtest
+2025-11-26 18:17:55,296 [INFO] [merge] Sauvegarde dans gguf_out/phi4_merged/merged_hf
+2025-11-26 18:18:07,381 [INFO] [merge] Terminé.
+2025-11-26 18:18:07,850 [INFO] [gguf] Conversion HF -> GGUF (f16) vers gguf_out/phi4_merged/model-f16.gguf
+2025-11-26 18:18:07,851 [INFO] [cmd] python3 /home/mauceric/PytorchROCmBitsandbytes/workspace/llama.cpp/convert_hf_to_gguf.py --outtype f16 --outfile gguf_out/phi4_merged/model-f16.gguf gguf_out/phi4_merged/merged_hf
+2025-11-26 18:23:54,820 [INFO] [merge] Chargement base=models/phi4 dtype=float16
+2025-11-26 18:23:57,818 [INFO] [merge] Chargement LoRA depuis checkpoints/phi4-lora-vtest
+2025-11-26 18:24:02,372 [INFO] [merge] Sauvegarde dans gguf_out/phi4_merged/merged_hf
+2025-11-26 18:24:14,921 [INFO] [merge] Terminé.
+2025-11-26 18:24:15,396 [INFO] [gguf] Conversion HF -> GGUF (f16) vers gguf_out/phi4_merged/model-f16.gguf
+2025-11-26 18:24:15,396 [INFO] [cmd] python3 /home/mauceric/PytorchROCmBitsandbytes/workspace/llama.cpp/convert_hf_to_gguf.py --outtype f16 --outfile gguf_out/phi4_merged/model-f16.gguf gguf_out/phi4_merged/merged_hf
+2025-11-26 18:24:27,868 [INFO] [gguf] Quantization Q4_K_M -> gguf_out/phi4_merged/model-Q4_K_M.gguf
+2025-11-26 18:24:27,868 [INFO] [cmd] /home/mauceric/PytorchROCmBitsandbytes/workspace/llama.cpp/build/bin/llama-quantize gguf_out/phi4_merged/model-f16.gguf gguf_out/phi4_merged/model-Q4_K_M.gguf Q4_K_M
+2025-11-26 18:37:02,522 [INFO] [merge] Chargement base=models/phi4 dtype=float16
+2025-11-26 18:37:05,624 [INFO] [merge] Chargement LoRA depuis checkpoints/phi4-lora-vtest
+2025-11-26 18:37:10,175 [INFO] [merge] Sauvegarde dans gguf_out/phi4_merged/merged_hf
+2025-11-26 18:37:21,516 [INFO] [merge] Terminé.
+2025-11-26 18:37:21,975 [INFO] [gguf] Conversion HF -> GGUF (f16) vers gguf_out/phi4_merged/model-f16.gguf
+2025-11-26 18:37:21,975 [INFO] [cmd] python3 /home/mauceric/PytorchROCmBitsandbytes/workspace/llama.cpp/convert_hf_to_gguf.py --outtype f16 --outfile gguf_out/phi4_merged/model-f16.gguf gguf_out/phi4_merged/merged_hf
+2025-11-26 18:37:33,327 [INFO] [gguf] Quantization Q4_K_M -> gguf_out/phi4_merged/model-Q4_K_M.gguf
+2025-11-26 18:37:33,327 [INFO] [cmd] /home/mauceric/PytorchROCmBitsandbytes/workspace/llama.cpp/build/bin/llama-quantize gguf_out/phi4_merged/model-f16.gguf gguf_out/phi4_merged/model-Q4_K_M.gguf Q4_K_M
+2025-11-26 18:38:14,608 [INFO] [gguf] Quantization Q5_K_M -> gguf_out/phi4_merged/model-Q5_K_M.gguf
+2025-11-26 18:38:14,608 [INFO] [cmd] /home/mauceric/PytorchROCmBitsandbytes/workspace/llama.cpp/build/bin/llama-quantize gguf_out/phi4_merged/model-f16.gguf gguf_out/phi4_merged/model-Q5_K_M.gguf Q5_K_M
+2025-11-26 18:38:48,425 [INFO] [gguf] Quantization Q6_K -> gguf_out/phi4_merged/model-Q6_K.gguf
+2025-11-26 18:38:48,425 [INFO] [cmd] /home/mauceric/PytorchROCmBitsandbytes/workspace/llama.cpp/build/bin/llama-quantize gguf_out/phi4_merged/model-f16.gguf gguf_out/phi4_merged/model-Q6_K.gguf Q6_K
+2025-11-26 18:39:11,282 [INFO] [gguf] Terminé.

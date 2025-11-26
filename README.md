@@ -32,6 +32,8 @@ Paramètres utiles :
 - `--lr`: taux d’apprentissage (2e-5)
 - `--bf16`: active bf16 si supporté (désactivé par défaut)
 - `--device`: `auto|cuda|cpu` (auto par défaut)
+- `--log_every`: pas de logging de la perte (1 = chaque step d’optimisation)
+- `--log_file`: fichier texte pour les pertes (`training.log` par défaut)
 
 ## Particularités ROCm
 - Le script fixe `HSA_OVERRIDE_GFX_VERSION=10.3.0` et `PYTORCH_HIP_ALLOC_CONF=expandable_segments:True` pour les iGPU 680M/GFX1030.
@@ -40,6 +42,41 @@ Paramètres utiles :
 ## Sorties
 - L’adaptateur LoRA et le tokenizer sauvegardés dans `--output_dir`.
 - Checkpoints intermédiaires selon `--save_strategy`.
+- Un logging des pertes pas-à-pas (stdout + fichier configurable).
+
+## Fusion + quantization (merge_and_quantize.py)
+- Fusionne l’adaptateur avec le modèle de base en HF.
+- Optionnel : conversion GGUF via llama.cpp et quantization (ex. Q4_K_M, Q5_K_M, Q6_K).
+Exemple fusion seule :
+```bash
+python merge_and_quantize.py \
+  --base models/phi4 \
+  --lora checkpoints/phi4-lora-vtest \
+  --out gguf_out/phi4_merged/merged_hf
+```
+Fusion + GGUF :
+```bash
+python merge_and_quantize.py \
+  --base models/phi4 \
+  --lora checkpoints/phi4-lora-vtest \
+  --out gguf_out/phi4_merged/merged_hf \
+  --gguf-dir gguf_out/phi4_merged \
+  --llama-cpp /chemin/vers/llama.cpp \
+  --quantize-types Q4_K_M Q5_K_M Q6_K
+```
+Les logs sont écrits dans `merge_and_quantize.log`.
+
+## Évaluation du modèle fusionné (evaluate_merged.py)
+Calcule loss et perplexité sur un JSONL (par défaut `data/test.jsonl`).
+```bash
+python evaluate_merged.py \
+  --model gguf_out/phi4_merged/merged_hf \
+  --data_file data/test.jsonl \
+  --assistant_tag "<|assistant|>:" \
+  --max_len 512 \
+  --per_device_batch 1
+```
+Logs console + `evaluate_merged.log`.
 
 ## Notes
 - Le dépôt ignore les poids volumineux (models/, checkpoints/) et garde le dossier `data/`.

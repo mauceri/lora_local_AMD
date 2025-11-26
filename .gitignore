@@ -7,7 +7,7 @@ __pycache__/
 checkpoints*/
 checkpoints_phi4_lora*/
 artifacts/
-gguf_out/
+gguf_out*/
 grenier/
 *.safetensors
 
